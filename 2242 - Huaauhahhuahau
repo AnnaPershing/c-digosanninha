@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    int i, j=0, ctgm;
+    char x[100], y[100];
+    scanf("%s", x);
+    for(i=0; x[i]; i++) // leitura de X
+    {
+        if(x[i]=='a' || x[i]=='e' || x[i]=='i' || x[i]=='o' || x[i]=='u')
+        {
+            y[j] = x[i];
+            j++;
+        }
+    }
+    y[j] = '\0'; // anula todos as casas que contem vogal
+    ctgm = strlen(y); // contabiliza vetor y
+    for(i=0, j=ctgm-1; i < ctgm; i++, j--) // -1 pois contabiliza a partir do zero
+    {
+        if(y[i] != y[j]) // se for diferente, será falso
+        {
+            printf("N\n");
+            return 0;
+        }
+    }
+    printf("S\n"); // senão, será verdadeiro
+    return 0;
+}
