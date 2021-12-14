@@ -1,0 +1,18 @@
+/* programa que aloca dinamicamente um vetor de 5000 inteiros e preencha de zero a 4999  */
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *vetor; // declaração do ponteiro
+    int x, y, k;
+    x=5000; // tamanho que queremos
+    y=0;
+    for (k=0; k<=x; k++){
+        vetor=malloc(x*sizeof(int));
+        vetor[k]=y;
+        y++;
+        printf("%d\n", vetor[k]);
+    }
+return 0; 
+}
