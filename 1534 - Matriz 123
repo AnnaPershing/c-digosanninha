@@ -1,0 +1,24 @@
+/*1534 matriz*/
+#include <stdio.h>
+int main()
+{
+    int N; // variavel tamanho
+    while(scanf("%d",&N)!=EOF) { // leitura com condição
+        int a, b, c, d, e, f, g, h, mat[N][N] ; // variaveis
+        for(a=0; a<N; a++) {
+            for(b=0; b<N; b++)
+                mat[a][b]=3;
+        }
+        for(a=0; a<N; a++)
+            mat[a][a]=1;
+        d=N-1;
+          for(a=0,b=d; a<N;a++,b--)
+            mat[a][b]=2;
+             for(a=0; a<N; a++) {
+               for(b=0; b<N; b++)
+                printf("%d",mat[a][b]);
+                printf("\n");
+        }
+    }
+    return 0;
+}
