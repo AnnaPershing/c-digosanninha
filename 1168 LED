@@ -1,0 +1,27 @@
+/* 1168 - LED */
+int main() {
+    int x,y, n, leds; // variaveis
+    char *v=(char *) malloc(sizeof(char) * 100); //ponteiro
+    x=0;
+    scanf("%i", &n);
+    while (x++ <n) { // condição
+        leds = 0;
+        y=0;
+        scanf("%s", v);
+        while (y<strlen(v)) {
+            switch(v[y]) {
+                case '1': leds +=2; break;
+                case '2':
+                case '3':
+                case '5': leds +=5; break;
+                case '4': leds +=4; break;
+                case '7': leds +=3; break;
+                case '8': leds +=7; break;
+                default: leds +=6; break;
+            }
+            y++;
+        }
+        printf("%i leds\n", leds);
+    }
+    return 0;
+}
