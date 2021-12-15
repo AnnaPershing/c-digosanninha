@@ -1,0 +1,23 @@
+/* 1871 - Zero vale Zero */
+#include <stdio.h>
+
+int main() {
+
+    int  resultado, ind, n1, n2; // variaveis
+    char *resp = (char *) malloc(sizeof(char) * 11); // ponteiro
+
+    while (1) {
+        scanf("%i %i ", &n1, &n2);
+        if (n1==0 && n2==0) exit(0);
+        resultado = n1 + n2;
+        snprintf(resp, 11, "%d", resultado);
+        ind=0;
+        while (resp[ind] != '\0') {
+            if (resp[ind] != '0')
+                printf("%c", resp[ind]);
+            ind++;
+        }
+        printf("\n");
+    }
+    return 0;
+}
