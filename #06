@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int **matriz;
+    int i, j; // variaveis
+    srand(time(0)); // aleatorio
+    matriz=(int**)malloc(9*sizeof(int*)); // alocação
+    for (i=0;i<9;i++)
+        matriz[i]=(int*)malloc(9*sizeof(int));
+    for (i=0;i<9;i++){
+        for (j=0;j<9;j++){
+        matriz[i][j]= rand();
+          printf("%d ", matriz[i][j]); // imprime
+        }
+    printf("\n");
+    }
+    for (i=0;i<9;i++) // liberar
+       free (matriz[i]);
+       free (matriz);
+    return 0;
+}
