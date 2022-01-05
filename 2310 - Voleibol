@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(){
+    //declaração das variáveis
+    int N, S, B, A, S1, B1, A1, i, j;
+    int St=0, Bt=0, At=0, Sc=0, Bc=0, Ac=0;
+    char nome[100], porcento='%';
+    double Sq, Bl, Atq;
+    //leitura do valor N
+    scanf ("%d\n", &N);
+    
+    for (i=0; i<N; i++){
+        scanf ("%s\n", nome);
+        scanf ("%d %d %d\n", &S, &B, &A);
+        scanf ("%d %d %d\n", &S1, &B1, &A1);
+        St+=S;
+        Bt+=B;
+        At+=A;
+        Sc+=S1;
+        Bc+=B1;
+        Ac+=A1;
+    }
+    
+    Sq = (Sc*100.0)/St;
+    Bl = (Bc*100.0)/Bt;
+    Atq = (Ac*100.0)/At;
+    
+    printf ("Pontos de Saque: %.2lf %c.\n", Sq, porcento);
+    printf ("Pontos de Bloqueio: %.2lf %c.\n", Bl, porcento);
+    printf ("Pontos de Ataque: %.2lf %c.\n", Atq, porcento);
+return 0;
+}
