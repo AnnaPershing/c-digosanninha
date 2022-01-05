@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+    //variáveis do tipo inteiro
+    int N, i, resto;
+    
+    //leitura do valor N
+    scanf ("%d", &N);
+    
+    //estrutura for para calculo dos números entre 1 e 10000
+    for (i=1;i<=10000;i++){
+        //calculo do resto do cálculo
+        resto = i%N;
+        //se o resto for igual a 2
+        if (resto==2){
+            //imprime o valor que tem como resto 2
+            printf ("%d\n", i);
+        }
+    }
+return 0;
+}
