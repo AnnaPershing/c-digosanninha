@@ -1,0 +1,21 @@
+#include <stdio.h>
+#define MAX 40001
+
+int main(int argc,char *argv[]){ //parametro
+int numeros[MAX], num[MAX]; // declaracao de vetores
+int N, x; // variaveis
+ scanf("%d", &N); // quantidade de numeros lido
+ for(x=0; x<MAX; x++) 
+ numeros[x]=0; // zera o vetor
+   for(x=0; x<N; x++){ 
+    scanf("%d", &num[x]); // armazena o numero
+   }
+    for(x=0; x<N; x++){ // qntd de vezes que o numero se repete
+     numeros[num[x]]++;
+     }
+     for(x=0; x<MAX; x++){
+       if(numeros[x]!=0)
+         printf("%d aparece %d vez(es)\n",x,numeros[x]);
+      }
+ return 0;
+}
