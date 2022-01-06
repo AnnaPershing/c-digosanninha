@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+       int X = 0, fuel=0; // variaveis
+       int alcool=0, gasolina=0, diesel=0; // variaveis
+           while (X != 4) { // condição de repetição
+           scanf("%d", &X); 
+           
+                  if (X==1) { // caso escolha 1, será alcool
+                     alcool+=1; // soma +1
+                
+            }else if (X==2) { // caso escolha 2, sera gasolina
+                gasolina += 1; // soma 1
+                
+            }else if (X==3) { // caso escolha 3, sera diesel
+                diesel+=1;// soma 1
+            }
+        }
+        printf("MUITO OBRIGADO\n");
+        printf("Alcool: %d\n", alcool);
+        printf("Gasolina: %d\n", gasolina);
+        printf("Diesel: %d\n", diesel);
+
+    return 0;
+}
