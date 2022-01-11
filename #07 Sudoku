@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+int main(){
+	
+	int matriz[9][9];
+	int digitos[10];
+	int n_inst;
+  	int inst;
+	int resp = 0; // variaveis
+  	
+  	scanf("%d",&n_inst); // leitura do numero de vezes preenchido
+  	
+  	for(inst = 1; inst <= n_inst; inst++){
+    	resp = 0;
+    	for(int i = 0; i < 9; i++){ // preenchimento da matriz
+      		for(int j = 0; j < 9; j++) 
+			  scanf("%d", &matriz[i][j]); // leitura da proposta
+    	}
+	    for(int i = 0; i < 9 && !resp; i++){ // fase de testes 
+	      	memset(digitos, 0, sizeof(digitos));
+	      	for(int j = 0; j < 9 && !resp; j++){
+	    		if(digitos[matriz[i][j]])
+	      			resp = 1;
+	    		else
+	      			digitos[matriz[i][j]] = 1;
+	      	}
+	    }
+	    for(int i = 0; i < 9 && !resp; i++){
+	      	memset(digitos, 0, sizeof(digitos));
+	      	for(int j = 0; j < 9 && !resp; j++){
+	    		if(digitos[matriz[j][i]])
+	      			resp = 1;
+	    		else
+	      			digitos[matriz[j][i]] = 1;
+	      	}
+	    }
+	     
+	    for(int i = 2; i < 9 && !resp; i += 3){
+	      	memset(digitos, 0, sizeof(digitos));
+	      	for(int j = i - 2; j <= i && !resp; j++){
+	    		for(int k = i - 2; k <= i && !resp; k++){
+	      			if(digitos[matriz[j][k]])
+	        			resp = 1;
+	      			else
+	        			digitos[matriz[j][k]] = 1;
+	    		}
+	      	}
+	    }
+	    printf("Instancia %d\n",inst); // resposta
+	    printf("%s\n\n",(!resp)?"SIM":"NAO"); // resposta
+  	}
+  	return 0 ; 
+}
