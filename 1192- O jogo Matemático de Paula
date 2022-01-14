@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(){
+    int N, i, n1, n2;
+    char letra; //variaveis
+    scanf("%d",&N); // numero de casos testes
+    for(i=0; i<N; i++){
+        scanf("%d %c %d", &n1, &letra, &n2); // leitura do numero, letra e numero
+        if(n1==n2)
+            printf("%d\n",n1*n2); // solução da sequência 
+        else if(letra>= 65 && letra<=90)
+            printf("%d\n",n2-n1); //solução da sequência 
+        else
+            printf("%d\n",n2+n1); //solução da sequência 
+    }
+    return 0;
+}
