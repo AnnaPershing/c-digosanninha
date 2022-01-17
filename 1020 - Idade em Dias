@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int dia, mes, ano=0; // variaveis
+    int idade, resto, zero; // variaveis
+    zero=0; 
+    scanf("%d", &idade); // leitura da idade
+    if (365<=idade) { // transformação em ano
+        ano=idade/365;
+        printf("%d ano(s)\n",ano);
+    }
+        else {
+         printf("%d ano(s)\n", zero);
+        }
+   resto=idade-ano*365;
+   if (30<=resto){ // transformação em meses
+       mes=resto/30;
+       printf("%d mes(es)\n", mes);
+   }
+       else {
+           mes=0;
+       printf("%d mes(es)\n", zero);
+   }
+    dia=resto-mes*30; // transformação em dias
+    printf("%d dia(s)\n", dia); 
+    
+     return 0;
+}
