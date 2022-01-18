@@ -1,0 +1,103 @@
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+ 
+int main(){
+
+	char matriz[9][9];
+
+	int letras[10];
+
+	int n_inst;
+
+  	int inst;
+
+	int resp = 0;
+
+  	scanf("%d ",&n_inst);
+
+  	for(inst = 1; inst <= n_inst; inst++){
+
+    	resp = 0;
+
+    	for(int i = 0; i < 9; i++){
+
+      		for(int j = 0; j < 9; j++){
+
+			  scanf("%c ", &matriz[i][j]);
+
+      		}
+
+    	}
+
+	    for(int i = 0; i < 9 && !resp; i++){
+
+	      	memset(letras, 0, sizeof(letras));
+
+	      	for(int j = 0; j < 9 && !resp; j++){
+
+	    		if(letras[matriz[i][j] - 64])
+
+	      			resp = 1;
+
+	    		else
+
+	      			letras[matriz[i][j] - 64] = 1;
+
+	      	}
+
+	    }
+
+	    for(int i = 0; i < 9 && !resp; i++){
+
+	      	memset(letras, 0, sizeof(letras));
+
+	      	for(int j = 0; j < 9 && !resp; j++){
+
+	    		if(letras[matriz[j][i] - 64])
+
+	      			resp = 1;
+
+	    		else
+
+	      			letras[matriz[j][i] - 64] = 1;
+
+	      	}
+
+	    }
+
+
+	    for(int i = 2; i < 9 && !resp; i += 3){
+
+	      	memset(letras, 0, sizeof(letras));
+
+	      	for(int j = i - 2; j <= i && !resp; j++){
+
+	    		for(int k = i - 2; k <= i && !resp; k++){
+
+	      			if(letras[matriz[j][k] - 64])
+
+	        			resp = 1;
+
+	      			else
+
+	        			letras[matriz[j][k] - 64] = 1;
+
+	    		}
+
+	      	}
+
+	    }
+
+	    printf("Instancia %d\n", inst);
+
+	    printf("%s\n\n", (!resp) ? "SIM" : "NAO");
+
+  	}
+
+  	return 0 ; 
+
+}
