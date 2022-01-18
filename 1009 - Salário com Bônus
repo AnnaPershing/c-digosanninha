@@ -1,0 +1,20 @@
+#include <stdio.h>
+#define MAX 100
+
+int main(){
+ 
+    double  salario, venda;
+    char nome[MAX]; // variaveis
+    
+    scanf ("%s\n", nome);
+    scanf ("%lf\n", &salario);
+    scanf ("%lf", &venda); // leituras
+
+    venda = venda*0.15; // calculo
+    salario += venda;
+    
+    //imprime
+    printf("TOTAL = R$ %.2lf\n",salario); // imrprime o salario
+    
+return 0;
+}
