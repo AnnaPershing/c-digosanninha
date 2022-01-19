@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+  double N, moedas[6] = {1, .5, .25, .1, .05, .01};
+  int notas, moeda, contador = 0, cedulas[6] = {100, 50, 20, 10, 5, 2};
+  scanf("%lf", &N);// leitura do valor
+  printf("NOTAS:\n"); // imprime "notas"
+  while (contador < 6) {
+    notas = (int) N / cedulas[contador];
+    N -= notas * cedulas[contador];
+    printf("%i nota(s) de R$ %i.00\n", notas, cedulas[contador++]);//imprime as notas
+  }
+  printf("MOEDAS:\n"); // imprime "moedas"
+  contador = 0; // zera o contador
+  while (contador < 5) {
+    moeda = (int) (N / moedas[contador]);
+    N -= (double) moeda * moedas[contador];
+    printf("%i moeda(s) de R$ %.2lf\n", moeda, moedas[contador++]);
+}
+  printf("%.lf moeda(s) de R$ 0.01\n", N * 100);  //imprime as moedads 
+
+  return 0 ;
+}
