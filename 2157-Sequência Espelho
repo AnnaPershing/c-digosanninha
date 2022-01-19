@@ -1,0 +1,25 @@
+/* 2157
+Sequência Espelho */
+#include <stdio.h>
+
+int main() {
+    
+    int C, inicio, fim, i, j; 
+    char str[6];// variaveis
+    
+    scanf("%d", &C); // leitura da qntd de testes
+    
+    while (C--) {
+        scanf("%d %d", &inicio, &fim); // inicio e fim da sequencia
+        for (i = inicio; i <= fim; i++)
+            printf("%d", i);
+        for (i = fim; i >= inicio; i--) { // espelho
+            sprintf(str, "%d", i);
+            for (j = strlen(str)-1; j >= 0; j--)
+                printf("%c", str[j]); // imprime
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
