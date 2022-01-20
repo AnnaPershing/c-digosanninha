@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    
+    int X, termo = 1;  // variavel
+   
+    do {
+        scanf("%i", &X); // leitura dos termos
+        if (X == 0) exit(0);
+        while (termo != X) {
+            printf("%i ", termo++);
+    }
+    printf("%i\n", termo);; // impressão até o zero
+    } while (X!=0);
+    
+    
+    return 0;
+}
