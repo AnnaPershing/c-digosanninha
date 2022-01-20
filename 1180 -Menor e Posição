@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+   int aux, N=0, posicao, menor;
+   int x[N];// variaveis
+   
+    scanf("%d", &N); // numeros de elementos para serem lidos
+    
+    for(aux=0; aux<N; aux++) // leitura do vetor
+        scanf("%d", &x[aux]); 
+        
+    menor=x[0];
+    for(aux=1; aux<N; aux++) // determinar o menor e a posicao
+    {
+        if(menor>x[aux])
+        {
+            menor=x[aux];
+            posicao=aux;
+        }
+    }
+    printf("Menor valor: %d\nPosicao: %d\n", menor, posicao);
+    return 0;
+}
