@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(){
+ char tipo;
+ int N, C=0 , R=0,  S=0, soma=0, quant; // variaveis
+ 
+ scanf("%d", &N); // quantidade de casos testes
+ while(N--){ 
+ scanf("%d %c", &quant, &tipo); // leitura da quantidade e tipo
+ soma += quant;
+ if (tipo == 'C'){ // somar se for rato, sapo ou coelho
+ C += quant;
+ } else if (tipo == 'R'){
+ R += quant;
+ } else if (tipo == 'S'){
+ S += quant;
+ }
+ }
+ printf("Total: %d cobaias\n", soma); 
+ printf("Total de coelhos: %d\n", C);
+ printf("Total de ratos: %d\n", R);
+ printf("Total de sapos: %d\n", S); // imprime os tipos
+ printf("Percentual de coelhos: %.2f %\n", (float)C * 100.0 / soma);
+ printf("Percentual de ratos: %.2f %\n", (float)R * 100.0 / soma);
+ printf("Percentual de sapos: %.2f %\n", (float)S * 100.0 / soma); // imprime os valores
+}
