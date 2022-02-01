@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+int main()
+{
+    int N, i, aux;
+    int A, B, C, D, E; // variaveis
+
+    while(scanf("%d", &N) != 0){ // indicando o número de questões da folha 
+        if(N == 0){ // qnd for igual a zero parar
+            break;
+        }
+        for(i = 0; i < N; i++){
+            scanf("%d %d %d %d %d", &A, &B, &C, &D, &E);
+            aux = 0;
+            if(A <= 127){ // se for maior vai ser considerada em branco
+                aux++;
+                A = 1;
+            }
+            else{
+                A = 0; // em preto
+            }
+            if(B <= 127){ // branco
+                auxB = 1;
+            }
+            else{
+                B = 0; // preto
+            }
+            if(C <= 127){ // branco
+                aux++;
+                C = 1; 
+            }
+            else{
+                C = 0;// preto
+            }
+            if(D <= 127){ // branco
+                aux++;
+                D = 1;
+            }
+            else{
+                D = 0; // preto
+            }
+            if(E <= 127){ // branco
+                aux++;
+                E = 1;
+            }
+            else{
+                E = 0; // preto
+            }
+            if(aux == 1){
+                if(A == 1){
+                    printf("A\n"); // resposta certa
+                }
+                if(B == 1){
+                    printf("B\n");// resposta certa
+                }
+                if(C == 1){
+                    printf("C\n");// resposta certa
+                }
+                if(D == 1){
+                    printf("D\n");// resposta certa
+                }
+                if(E == 1){
+                    printf("E\n");// resposta certa
+                }
+            }
+            else{
+                printf("*\n"); // resposta errada
+            }
+        }
+    }
+    return 0;
+}
