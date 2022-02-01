@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+    int x, y, res = 0; // variaveis
+    scanf("%i %i",&x, &y); // leitura dos numeros
+    if (x > y) { // se x for maior q y
+        x += y;
+        y = x - y; // identificação dos numeros entre eles
+        x -= y; 
+    }
+    if (x % 2 == 0) // contagem
+        x++;
+    else
+        x += 2;
+    while (x < y) {
+        res += x; 
+        x += 2;
+    }
+    printf("%i\n",res);//resposta
+    return 0;
+}
