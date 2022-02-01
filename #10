@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+int main(){
+	
+	int matriz[9][9];
+	int digitos[10];
+	int n_inst;
+  	int inst;
+	int resp = 0;
+  	
+  	scanf("%d",&n_inst);
+  	
+  	for(inst = 1; inst <= n_inst; inst++){
+    	resp = 0;
+    	for(int i = 0; i < 9; i++){
+      		for(int j = 0; j < 9; j++) 
+			  scanf("%d", &matriz[i][j]);
+    	}
+	    for(int i = 0; i < 9 && !resp; i++){
+	      	memset(digitos, 0, sizeof(digitos));
+	      	for(int j = 0; j < 9 && !resp; j++){
+	      		if(matriz[i][j] == 0) continue;
+	    		if(digitos[matriz[i][j]])
+	      			resp = 1;
+	    		else
+	      			digitos[matriz[i][j]] = 1;
+	      	}
+	    }
+	    for(int i = 0; i < 9 && !resp; i++){
+	      	memset(digitos, 0, sizeof(digitos));
+	      	for(int j = 0; j < 9 && !resp; j++){
+	      		if(matriz[j][i] == 0) continue;
+	 	   		if(digitos[matriz[j][i]])
+	      			resp = 1;
+	    		else
+	      			digitos[matriz[j][i]] = 1;
+	      	}
+	    }
+	     
+	    for(int i = 2; i < 9 && !resp; i += 3){
+	      	memset(digitos, 0, sizeof(digitos));
+	      	for(int j = i - 2; j <= i && !resp; j++){
+	    		for(int k = i - 2; k <= i && !resp; k++){
+	    			if(matriz[j][k] == 0) continue;
+			  	    if(digitos[matriz[j][k]])
+	        			resp = 1;
+	      			else
+	        			digitos[matriz[j][k]] = 1;
+	    		}
+	      	}
+	    }
+	    printf("Instancia %d\n", inst);
+	    printf("%s\n\n", (!resp) ? "SIM" : "NAO");
+  	}
+  	return 0 ; 
+}
