@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main(){
+    
+    double X, Y;
+    
+    scanf("%lf %lf", &X, &Y); // variaveis
+    
+    if (X == 0.0 && Y == 0.0) // caso estejam no ponto (0,0)
+    {
+        printf("Origem\n"); //origem
+    }
+    else if (X == 0.0 && Y != 0.0) // se estiver no ponto (0,y)
+    {
+        printf("Eixo Y\n"); //y
+    }
+    else if (Y == 0.0 && X != 0.0)
+    {
+        printf("Eixo X\n"); //x
+    }
+    else if (X > 0.0) // condição se x>0
+    {
+        if (Y > 0.0) // condição se y>0
+        {
+            printf("Q1\n");
+        }
+        else printf("Q4\n"); // senao quadrande 4
+    }
+    else if (Y > 0.0) // se y>0
+    {
+        printf("Q2\n"); // quadrante 2
+    }
+    else printf("Q3\n"); // senao, quadrante 3
+    return 0;
+}
