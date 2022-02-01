@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+
+     float x, y, cont1, cont2 ; // variaveis
+   scanf("%f %f", &x, &y); // leitura das entradas
+   cont1=x*3.5+y*7.5;
+   cont2=3.5+7.5;
+   printf("MEDIA = %.5f\n", cont1/cont2); // resposta da média
+
+    return 0;
+}
