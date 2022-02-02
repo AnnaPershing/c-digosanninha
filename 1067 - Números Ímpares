@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+
+  int n, aux; // variaveis
+    scanf("%d", &n); // leitura do numero
+    if(n%2 == 0) // se for igual a zero
+        n = n - 1;
+    for (aux=1 ; aux <= n; aux += 2) // seleção
+        printf("%d\n",aux); // resposta
+
+    return 0;
+}
