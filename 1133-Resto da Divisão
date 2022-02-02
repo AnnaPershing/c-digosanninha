@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+
+int main(){
+    int X, Y, aux; // variaveis
+    scanf("%d%d", &X, &Y); // leitura 
+    if (X > Y) { // se x for maior que y
+       for (aux = Y+1 ; aux < X; aux++) { 
+       if (aux % 5 == 2 || aux % 5 == 3) { 
+         printf("%d\n", aux); // imprime os valores entre x e y qnd x for maior que y
+       }
+            }
+        }
+        else if (X < Y) { // se y for maior que x
+        for (aux = X+1 ; aux < Y; aux++) {
+             if (aux % 5 == 2 || aux % 5 == 3) {
+                    printf("%d\n", aux); // imprime os valores entre x e y qnd y for maior que x
+             }
+         }
+    }
+}
