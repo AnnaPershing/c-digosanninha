@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+ int main() {
+     
+ int n, h;  
+ float v;// variaveis
+ scanf("%d %d %f", &n, &h, &v); // leitura do numero, horas trabalhadas e o valor das horas
+ printf("NUMBER = %d\n",n); // imprime o numero
+ printf("SALARY = U$ %.2f\n",(h*v)); // imprime as horas trabalhadas
+
+return 0;
+
+}
