@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+  float  n, total = 0, media = 0;
+  int i, np = 0; // variaveis
+    for (i = 1; i <= 6; i++) { 
+     scanf("%f", &num); // leitura dos 6 numeros
+     if (n > 0) { // listar os positivos
+     np += 1;
+     total += n;
+     }
+    }
+     media = total /np; // media dos positivos
+
+    printf("%d valores positivos\n", np); //numero de postivos
+    printf("%.1f\n",media); // media dos positivos
+    return 0;
+}
