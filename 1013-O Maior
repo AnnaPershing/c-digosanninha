@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    
+ int a, b, c, MaiorAB; // variaveis
+ scanf("%d %d %d", &a, &b, &c); // leitura dos numeros
+ aux =(a + b + abs(a - b))/2;
+ MaiorAB = (c + MaiorAB + abs(aux - c))/2;
+ printf("%d eh o maior\n",MaiorAB);  // imprime o maior entre os 3
+  
+   return 0;
+}
